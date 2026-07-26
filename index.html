@@ -8,6 +8,7 @@
 <meta name="description" content="Private stakeholder design-review preview. Not the live website.">
 <link rel="icon" href="assets/achrh-logo.png">
 <style>
+  .skip{position:absolute;left:-999px;top:0;z-index:500;background:#241C2E;color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600}.skip:focus{left:0}
   .pvw-banner{position:fixed;top:0;left:0;right:0;z-index:300;min-height:34px;display:flex;
     align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;text-align:center;background:#241C2E;color:#F3E9DE;padding:7px 14px;
     font:600 12px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.01em}
@@ -22,6 +23,7 @@
 </head>
 <body>
 <div class="pvw-banner" role="note" aria-label="Preview notice">ACHRH Website Preview · <span>Private design review — content and functionality are not final.</span></div>
+<a class="skip" href="#top">Skip to content</a>
 <style>
   :root{
     --lav:#8A72B8;--lav-soft:#C7B4E4;--rose:#F4A9A8;--peach:#FBC79E;--coral:#EE8A5E;--coral-deep:#DE7346;
@@ -204,8 +206,8 @@
 
 <nav class="nav" id="nav">
   <img class="logo-img" src="assets/achrh-logo.png" alt="ACHRH — AustralAsian Centre for Human Rights & Health">
-  <span class="links"><a href="#" class="hl">Get&nbsp;Help</a><a href="#">Our&nbsp;Work</a><a href="#">Research</a><a href="#">About</a><a href="#">News</a></span>
-  <span class="right"><a class="pill donate" href="#cta">Donate</a></span>
+  <span class="links"><a href="get-help.html" class="hl">Get&nbsp;Help</a><a href="our-work.html">Our&nbsp;Work</a><a href="research-resources.html">Research</a><a href="about-us.html">About</a><a href="news-media.html">News</a></span>
+  <span class="right"><a class="pill donate" href="get-involved.html">Donate</a></span>
 </nav>
 
 <div class="ticker on" id="ticker" aria-label="Latest highlights">
@@ -237,7 +239,7 @@
       <div class="eyebrow rv in">AustralAsian Centre for Human Rights &amp; Health</div>
       <h1 class="rv d1 in">Strengthening families through harm prevention.</h1>
       <p class="lede rv d2 in">A Melbourne think tank building safer, stronger families — through education, research and community participatory art. Since 2012.</p>
-      <div class="row rv d3 in"><a class="btn b-fill" href="#gethelp">Find support now</a><a class="btn b-ghost" href="#record">See how we changed the law ↓</a></div>
+      <div class="row rv d3 in"><a class="btn b-fill" href="get-help.html">Find support now</a><a class="btn b-ghost" href="#record">See how we changed the law ↓</a></div>
     </div>
   </div>
   <div class="cue">Scroll<span class="ln"></span></div>
@@ -250,7 +252,7 @@
   <div class="wrap">
     <div class="eyebrow rv">Who we are</div>
     <p class="quote rv d1">“There is no higher form of contact with humans than <span class="accent">art.</span> We use it in service of human rights — to find community solutions.”</p>
-    <div class="row"><a class="btn b-quiet rv d2" href="#">Our story →</a></div>
+    <div class="row"><a class="btn b-quiet rv d2" href="about-us.html">Our story →</a></div>
   </div>
 </section>
 
@@ -340,7 +342,7 @@
       <div class="pub"><span class="ty">Blueprint</span><span class="ti">Advocacy on behalf of temporary visa holders — a blueprint for reform</span><span class="mt">2023</span></div>
       <div class="pub"><span class="ty">Submission</span><span class="ti">Senate inquiry into dowry abuse</span><span class="mt">2017 · PDF</span></div>
     </div>
-    <div class="row"><a class="btn b-quiet" href="#">All research &amp; submissions →</a></div>
+    <div class="row"><a class="btn b-quiet" href="research-resources.html">All research &amp; submissions →</a></div>
   </div>
 </section>
 
@@ -355,7 +357,7 @@
       <div class="slide"><div class="dt">8 Jun 2020 · News</div><h3>Emergency support for Victoria’s international students.</h3></div>
     </div>
     <div class="dots" id="dots"></div>
-    <div class="row"><a class="btn b-quiet" href="#">All news &amp; events →</a></div>
+    <div class="row"><a class="btn b-quiet" href="news-media.html">All news &amp; events →</a></div>
   </div>
 </section>
 
@@ -382,7 +384,7 @@
     <div class="eyebrow rv">You are not alone</div>
     <h2 class="rv d1" style="margin-top:10px">Worried about someone — or yourself?</h2>
     <p class="lede rv d2">Recognise the early signs, check the health of your relationship privately, or reach out for support. Help is confidential and one tap away.</p>
-    <div class="row rv d3" style="justify-content:center"><a class="btn b-fill" href="#">Check your relationship</a><a class="btn b-ghost" href="#" style="border-color:var(--plum);color:var(--plum)">Support a friend</a></div>
+    <div class="row rv d3" style="justify-content:center"><a class="btn b-fill" href="get-help.html">Check your relationship</a><a class="btn b-ghost" href="get-help.html" style="border-color:var(--plum);color:var(--plum)">Support a friend</a></div>
   </div>
 </section>
 
@@ -392,7 +394,7 @@
     <div class="eyebrow rv">Be part of the next chapter</div>
     <h2 class="rv d1" style="margin-top:12px">Help build safer, stronger families.</h2>
     <p class="lede rv d2">Donate, volunteer or partner with us.</p>
-    <div class="row rv d3" style="justify-content:center"><a class="btn b-fill" href="#">Donate</a><a class="btn b-ghost" href="#" style="border-color:var(--plum);color:var(--plum)">Volunteer with us</a></div>
+    <div class="row rv d3" style="justify-content:center"><a class="btn b-fill" href="get-involved.html">Donate</a><a class="btn b-ghost" href="get-involved.html" style="border-color:var(--plum);color:var(--plum)">Volunteer with us</a></div>
   </div>
 </section>
 
@@ -401,10 +403,10 @@
 <footer class="foot">
   <div class="fgrid">
     <div class="fcol fbrand"><img class="fl" src="assets/achrh-logo.png" alt="ACHRH"><p>AustralAsian Centre for Human Rights &amp; Health. Building safer, stronger families since 2012.</p></div>
-    <div class="fcol"><h5>Get Help</h5><a href="#">Support now</a><a href="#">Check your relationship</a><a href="#">Understanding dowry abuse</a></div>
-    <div class="fcol"><h5>Our Work</h5><a href="#">Programs</a><a href="#">Advocacy</a><a href="#">Research</a></div>
-    <div class="fcol"><h5>About</h5><a href="#">Our story</a><a href="#">People</a><a href="#">Partners</a></div>
-    <div class="fcol"><h5>Stay in touch</h5><a href="#">Newsletter</a><a href="#">Contact</a><a href="#">News &amp; events</a></div>
+    <div class="fcol"><h5>Get Help</h5><a href="get-help.html">Support now</a><a href="#">Check your relationship</a><a href="#">Understanding dowry abuse</a></div>
+    <div class="fcol"><h5>Our Work</h5><a href="our-work.html">Programs</a><a href="#">Advocacy</a><a href="#">Research</a></div>
+    <div class="fcol"><h5>About</h5><a href="about-us.html">Our story</a><a href="#">People</a><a href="#">Partners</a></div>
+    <div class="fcol"><h5>Stay in touch</h5><a href="news-media.html">Newsletter</a><a href="contact.html">Contact</a><a href="news-media.html">News &amp; events</a></div>
   </div>
   <div class="ftrust"><span>Registered charity · ACNC</span><span>ABN 00 000 000 000</span><span>We acknowledge the Traditional Owners of Country.</span><span>Privacy &amp; safety</span></div>
 </footer>
