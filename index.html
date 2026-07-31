@@ -93,8 +93,8 @@
   @keyframes drop{0%{transform:scaleY(.3);transform-origin:top;opacity:.3}50%{transform:scaleY(1);opacity:.9}100%{transform:scaleY(.3);transform-origin:bottom;opacity:.3}}
   @media(max-width:760px){
     .photohero{display:block;min-height:0;overflow:hidden;padding-left:0;padding-right:0;padding-bottom:0}
-    .ph-media{position:relative;inset:auto;width:100%;height:clamp(238px,62vw,308px)}
-    .ph-img{object-position:34% 42%;transform:scale(1.02);animation:kbslowm 26s ease-in-out infinite alternate}
+    .ph-media{position:relative;inset:auto;width:100%;height:clamp(360px,113vw,448px)}
+    .ph-img{object-position:28% 52%;transform:scale(1.08);animation:kbslow-mobile 26s ease-in-out infinite alternate}
     .ph-grade{background:linear-gradient(to bottom,rgba(46,36,57,.05),transparent 42%,rgba(46,36,57,.30))}
     .ph-scrim{display:none}
     .ph-content{position:relative;inset:auto;z-index:3;width:100%;max-width:none;margin:0;display:block;background:var(--plum);color:#fff}
@@ -106,7 +106,8 @@
     .ph-content .b-ghost{border-color:var(--lav-soft);color:#ECE1F7}
     .cue{display:none}
   }
-  @keyframes kbslowm{from{transform:scale(1.02)}to{transform:scale(1.07)}}
+  @keyframes kbslow-mobile{from{transform:scale(1.08)}to{transform:scale(1.14)}}
+  @media(max-width:760px) and (prefers-reduced-motion:reduce){.ph-img{transform:scale(1.10)}}
 
   /* MISSION */
   .grade-warm{background:radial-gradient(80% 80% at 28% 30%,rgba(245,195,78,.4),transparent 55%),linear-gradient(150deg,#FBDBB0,#F7C7C3 72%,#EAD9F2)}
