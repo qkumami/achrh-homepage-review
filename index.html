@@ -90,7 +90,7 @@
   .cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;color:var(--ink-soft);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
   .cue .ln{display:block;width:1px;height:34px;margin:9px auto 0;background:linear-gradient(var(--ink-soft),transparent);animation:drop 1.8s ease-in-out infinite}
   @keyframes drop{0%{transform:scaleY(.3);transform-origin:top;opacity:.3}50%{transform:scaleY(1);opacity:.9}100%{transform:scaleY(.3);transform-origin:bottom;opacity:.3}}
-  @media(max-width:760px){.photohero{align-items:flex-end;padding:120px 24px 80px}.ph-scrim{background:linear-gradient(to top,rgba(255,248,239,.90),rgba(255,248,239,.42) 36%,transparent 62%)}.ph-content{justify-content:flex-start}.ph-block{max-width:none}}
+  @media(max-width:760px){.photohero{align-items:flex-end;padding:0}.ph-img{object-position:38% 45%}.ph-scrim{display:none}.ph-content{justify-content:center;width:100%;padding:0}.ph-block{max-width:none;width:100%;padding:clamp(48px,14vw,72px) 24px 28px;background:linear-gradient(to top,var(--cream) 56%,rgba(255,248,239,.92) 80%,rgba(255,248,239,0) 100%)}.cue{display:none}}
 
   /* MISSION */
   .grade-warm{background:radial-gradient(80% 80% at 28% 30%,rgba(245,195,78,.4),transparent 55%),linear-gradient(150deg,#FBDBB0,#F7C7C3 72%,#EAD9F2)}
@@ -201,7 +201,7 @@
 
   @media(max-width:900px){.links{display:none}.figs{grid-template-columns:repeat(3,1fr)}.facts{grid-template-columns:1fr 1fr}.progs{grid-template-columns:1fr}.tsteps{grid-template-columns:1fr 1fr}.tline,.tfill{display:none}.fgrid{grid-template-columns:1fr 1fr}}
   @media(max-width:520px){.figs{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr}.pub{flex-wrap:wrap;gap:4px}.pub .mt{margin-left:0}}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.cue .ln,.livedot,.ph-img{animation:none}.ph-img{transform:none}.tfill{transition:none}.prog:hover .pb{transform:none}.tk-track,.vf-canvas{animation:none}.vf-canvas{display:none}.slide{position:relative;opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.cue .ln,.livedot,.ph-img{animation:none}.ph-img{transform:scale(1.06)}.tfill{transition:none}.prog:hover .pb{transform:none}.tk-track,.vf-canvas{animation:none}.vf-canvas{display:none}.slide{position:relative;opacity:1;transform:none}}
 </style>
 
 <nav class="nav" id="nav">
@@ -231,7 +231,7 @@
 
 <!-- PHOTOGRAPHIC HERO -->
 <section class="photohero" id="top">
-  <img class="ph-img" src="assets/hero-family.jpg" alt="A family in a park — a father with his young son on his shoulders, and a mother beside them in warm morning light">
+  <img class="ph-img" src="assets/hero-family-uplift-v1.jpg" alt="A family in a park — a father with his young son on his shoulders, and a mother beside them in warm morning light">
   <div class="ph-grade"></div>
   <div class="ph-scrim"></div>
   <div class="ph-content">
