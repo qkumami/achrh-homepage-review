@@ -80,7 +80,8 @@
 
   /* PHOTOGRAPHIC HERO */
   .photohero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:150px 26px 90px}
-  .ph-img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:34% 42%;filter:saturate(1.14) contrast(1.06);transform:scale(1.04);animation:kbslow 28s ease-in-out infinite alternate}
+  .ph-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:34% 42%;filter:saturate(1.14) contrast(1.06);transform:scale(1.04);animation:kbslow 28s ease-in-out infinite alternate}
   @keyframes kbslow{from{transform:scale(1.04)}to{transform:scale(1.12)}}
   .ph-grade{position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(238,138,94,.10),transparent 46%,rgba(138,114,184,.12)),linear-gradient(to top,rgba(46,36,57,.20),transparent 26%)}
   .ph-scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to left,rgba(255,248,239,.86) 0%,rgba(255,248,239,.62) 30%,rgba(255,248,239,.15) 46%,transparent 55%)}
@@ -90,7 +91,22 @@
   .cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:4;color:var(--ink-soft);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
   .cue .ln{display:block;width:1px;height:34px;margin:9px auto 0;background:linear-gradient(var(--ink-soft),transparent);animation:drop 1.8s ease-in-out infinite}
   @keyframes drop{0%{transform:scaleY(.3);transform-origin:top;opacity:.3}50%{transform:scaleY(1);opacity:.9}100%{transform:scaleY(.3);transform-origin:bottom;opacity:.3}}
-  @media(max-width:760px){.photohero{align-items:flex-end;padding:0}.ph-img{object-position:38% 45%}.ph-scrim{display:none}.ph-content{justify-content:center;width:100%;padding:0}.ph-block{max-width:none;width:100%;padding:clamp(48px,14vw,72px) 24px 28px;background:linear-gradient(to top,var(--cream) 56%,rgba(255,248,239,.92) 80%,rgba(255,248,239,0) 100%)}.cue{display:none}}
+  @media(max-width:760px){
+    .photohero{display:block;min-height:0;overflow:hidden;padding-left:0;padding-right:0;padding-bottom:0}
+    .ph-media{position:relative;inset:auto;width:100%;height:clamp(238px,62vw,308px)}
+    .ph-img{object-position:34% 42%;transform:scale(1.02);animation:kbslowm 26s ease-in-out infinite alternate}
+    .ph-grade{background:linear-gradient(to bottom,rgba(46,36,57,.05),transparent 42%,rgba(46,36,57,.30))}
+    .ph-scrim{display:none}
+    .ph-content{position:relative;inset:auto;z-index:3;width:100%;max-width:none;margin:0;display:block;background:var(--plum);color:#fff}
+    .ph-block{max-width:none;width:100%;padding:clamp(18px,5vw,26px) 22px clamp(24px,7vw,36px)}
+    .ph-block .eyebrow{color:var(--gold-soft)}
+    .ph-block h1{color:#fff !important;font-size:clamp(2.05rem,8.4vw,2.7rem) !important;line-height:1.0 !important;margin:8px 0 0}
+    .ph-block .lede{color:#E6DAF0;margin-top:13px}
+    .ph-block .row{margin-top:16px;gap:10px}
+    .ph-content .b-ghost{border-color:var(--lav-soft);color:#ECE1F7}
+    .cue{display:none}
+  }
+  @keyframes kbslowm{from{transform:scale(1.02)}to{transform:scale(1.07)}}
 
   /* MISSION */
   .grade-warm{background:radial-gradient(80% 80% at 28% 30%,rgba(245,195,78,.4),transparent 55%),linear-gradient(150deg,#FBDBB0,#F7C7C3 72%,#EAD9F2)}
@@ -231,8 +247,10 @@
 
 <!-- PHOTOGRAPHIC HERO -->
 <section class="photohero" id="top">
-  <img class="ph-img" src="assets/hero-family-uplift-v1.jpg" alt="A family in a park — a father with his young son on his shoulders, and a mother beside them in warm morning light">
-  <div class="ph-grade"></div>
+  <div class="ph-media">
+    <img class="ph-img" src="assets/hero-family-uplift-v1.jpg" alt="A family in a park — a father with his young son on his shoulders, and a mother beside them in warm morning light">
+    <div class="ph-grade"></div>
+  </div>
   <div class="ph-scrim"></div>
   <div class="ph-content">
     <div class="ph-block">
