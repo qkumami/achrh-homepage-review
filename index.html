@@ -1,448 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ACHRH Website Preview</title>
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Private stakeholder design-review preview. Not the live website.">
-<link rel="icon" href="assets/achrh-logo.png">
-<style>
-  .skip{position:absolute;left:-999px;top:0;z-index:500;background:#241C2E;color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600}.skip:focus{left:0}
-  .pvw-banner{position:fixed;top:0;left:0;right:0;z-index:300;min-height:34px;display:flex;
-    align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;text-align:center;background:#241C2E;color:#F3E9DE;padding:7px 14px;
-    font:600 12px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;letter-spacing:.01em}
-  .pvw-banner span{opacity:.82;font-weight:500}
-  .nav{top:34px !important}.ticker{top:118px !important}.nav.solid ~ .ticker.on{top:96px !important}.hero{padding-top:172px}
-  @media(max-width:600px){.nav{top:48px !important}.ticker{top:132px !important}.hero{padding-top:188px}}
-  .pvw-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);opacity:0;background:#241C2E;color:#F3E9DE;
-    padding:12px 18px;border-radius:10px;font:500 13px/1.4 system-ui,sans-serif;box-shadow:0 12px 34px rgba(0,0,0,.3);z-index:400;transition:opacity .3s,transform .3s;max-width:88vw;text-align:center}
-  .pvw-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-</style>
+<title>ACHRH — Strengthening families through harm prevention</title>
+<meta name="description" content="AustralAsian Centre for Human Rights & Health — a Melbourne think tank building safer, stronger families through education, research and community participatory art. Since 2012.">
+<link rel="stylesheet" href="assets/shell.css">
 </head>
 <body>
-<div class="pvw-banner" role="note" aria-label="Preview notice">ACHRH Website Preview · <span>Private design review — content and functionality are not final.</span></div>
-<a class="skip" href="#top">Skip to content</a>
-<style>
-  :root{
-    --lav:#8A72B8;--lav-soft:#C7B4E4;--rose:#F4A9A8;--peach:#FBC79E;--coral:#EE8A5E;--coral-deep:#DE7346;
-    --gold:#F5C34E;--gold-soft:#FBD98B;--cream:#FFF8EF;--peachbg:#FDEEDD;--lilac:#F2ECF8;
-    --ink:#3C3247;--ink-soft:#6E6478;--plum:#2E2439;--line:#EEE2D5;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  ::selection{background:var(--gold);color:var(--plum)}
-  img{max-width:100%}
-  a:focus-visible,.pill:focus-visible,button:focus-visible{outline:2px solid var(--coral-deep);outline-offset:3px}
+<a class="skip" href="#main">Skip to content</a>
 
-  /* NAV + logo */
-  .nav{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;align-items:center;gap:22px;padding:16px 40px;background:color-mix(in srgb,var(--cream) 94%,transparent);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);transition:padding .4s}
-  .nav.solid{padding:10px 40px}
-  .logo-img{height:52px;width:auto;display:block}
-  .nav.solid .logo-img{height:42px}
-  .links{display:flex;gap:22px;margin-left:34px}
-  .links a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:500}
-  .links a.hl{color:var(--coral-deep);font-weight:700}
-  .nav .right{margin-left:auto;display:flex;gap:10px;align-items:center}
-  .pill{font-size:13px;font-weight:600;text-decoration:none;padding:9px 15px;border-radius:999px}
-  .pill.exit{background:#fff;color:var(--plum);border:1px solid var(--line)}
-  .pill.donate{background:var(--coral);color:#2b160c}
+<!-- preview banner (preview-only — DO NOT carry to Wix) -->
+<div class="pvw-banner" role="note">ACHRH Website Preview · <span>Wave&nbsp;1 build — global shell + Home. Content &amp; functionality not final.</span></div>
 
-  /* TICKER */
-  .ticker{position:fixed;top:84px;left:0;right:0;z-index:60;background:var(--plum);color:#F3E9DE;overflow:hidden;font-size:13px;height:0;transition:height .4s,top .4s}
-  .ticker.on{height:38px}
-  .nav.solid ~ .ticker.on{top:62px}
-  .tk-track{display:inline-flex;gap:40px;white-space:nowrap;padding:10px 0;will-change:transform;animation:marq 34s linear infinite}
-  .ticker:hover .tk-track{animation-play-state:paused}
-  .tk-track b{color:var(--gold);font-weight:700}
-  .tk-item::before{content:"✦";color:var(--coral);margin-right:14px;opacity:.8}
-  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+<!-- ================= GLOBAL HEADER / NAV (locked primary nav) ================= -->
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="ACHRH home"><img src="assets/achrh-logo.png" alt="AustralAsian Centre for Human Rights &amp; Health"></a>
+  <nav class="primary" aria-label="Primary">
+    <div class="has-menu"><a class="nav-top hl" href="#" aria-current="page">Get Help</a></div>
+    <div class="has-menu">
+      <button class="nav-top" aria-expanded="false" aria-haspopup="true">Our Work <span class="car">▼</span></button>
+      <div class="dropdown"><a class="ov" href="#">Overview →</a><a href="#">Preventing Dowry Abuse</a><a href="#">Respectful Relationships</a><a href="#">Community Theatre &amp; Arts</a><a href="#">Community / International Work</a><a href="#">Research &amp; Advocacy</a></div>
+    </div>
+    <div class="has-menu">
+      <button class="nav-top" aria-expanded="false" aria-haspopup="true">Our Impact <span class="car">▼</span></button>
+      <div class="dropdown"><a class="ov" href="#impact">Overview →</a><a href="#">Impact in Numbers</a><a href="#">How We Changed Law &amp; Policy</a><a href="#">Awards &amp; Recognition</a><a href="#">Funded Programs &amp; Grants</a><a href="#">Evaluations &amp; Reports</a></div>
+    </div>
+    <div class="has-menu">
+      <button class="nav-top" aria-expanded="false" aria-haspopup="true">News &amp; Events <span class="car">▼</span></button>
+      <div class="dropdown"><a class="ov" href="#news">Overview →</a><a href="#">Latest News</a><a href="#">Upcoming Events</a><a href="#">Past Events</a><a href="#">In the Media</a></div>
+    </div>
+    <div class="has-menu">
+      <button class="nav-top" aria-expanded="false" aria-haspopup="true">Resources <span class="car">▼</span></button>
+      <div class="dropdown"><a class="ov" href="#resource">Overview →</a><a href="#">Research &amp; Publications</a><a href="#">Government Submissions</a><a href="#">Guides &amp; Community Resources</a><a href="#">Films &amp; Documentaries</a><a href="#">Reports</a><a href="#">Newsletter Archive</a></div>
+    </div>
+    <div class="has-menu">
+      <button class="nav-top" aria-expanded="false" aria-haspopup="true">About <span class="car">▼</span></button>
+      <div class="dropdown"><a class="ov" href="#people">Overview →</a><a href="#">Mission &amp; Story</a><a href="#">Founders</a><a href="#">Board &amp; People</a><a href="#">Partners &amp; Memberships</a><a href="#">Contact</a></div>
+    </div>
+  </nav>
+  <div class="right"><a class="btn btn-primary" href="#support">Donate</a></div>
+  <button class="navtoggle" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
+</header>
 
-  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--coral-deep)}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.012em;text-wrap:balance;margin:0;color:var(--plum)}
-  h1{font-size:clamp(36px,5.6vw,72px);line-height:1.02}
-  h2{font-size:clamp(28px,4.4vw,50px);line-height:1.04}
-  .lede{font-size:clamp(17px,2vw,21px);color:var(--ink-soft);max-width:44ch;margin:20px 0 0}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;text-decoration:none;padding:14px 24px;border-radius:999px;transition:transform .25s,box-shadow .25s}
-  .b-fill{background:var(--coral);color:#2b160c;box-shadow:0 6px 20px rgba(238,138,94,.35)}
-  .b-ghost{border:1.5px solid var(--lav);color:var(--lav)}
-  .b-quiet{color:var(--coral-deep);padding:14px 4px}
-  .btn:hover{transform:translateY(-2px)}
-  .row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-  .wrap{max-width:1120px;margin:0 auto;width:100%;position:relative;z-index:3}
-  .stage{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:110px 26px;overflow:hidden}
-  .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
-  .rv.in{opacity:1;transform:none}.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
-
-  /* UNIFIED RESPONSIVE HERO  —  one DOM, one image, one centred positioning model.
-     Same image+panel relationship at every width; fluid via clamp()/min()/%, natural wrapping. */
-  .hero{position:relative;overflow:hidden;background:#21152d;padding-bottom:clamp(2rem,5vw,5rem)}
-  .hero-media{position:relative;width:100%;height:clamp(340px,56vw,680px);overflow:hidden}
-  .hero-image{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform-origin:50% 50%;animation:hero-breathe 28s ease-in-out infinite alternate}
-  @keyframes hero-breathe{from{transform:scale(1.01)}to{transform:scale(1.045)}}
-  .hero-message{position:relative;z-index:2;width:min(92%,1080px);margin:calc(-1 * clamp(2.5rem,6vw,5rem)) auto 0;padding:clamp(1.75rem,4vw,4rem) clamp(1.5rem,5vw,5rem);background:rgba(31,18,43,.97);color:#fffaf4;text-align:left;border-radius:clamp(12px,1.4vw,20px);box-shadow:0 -10px 44px rgba(0,0,0,.30)}
-  .hero-eyebrow{max-width:46rem;margin:0 0 clamp(1rem,2vw,1.5rem);font-size:clamp(.78rem,1.6vw,1.05rem);line-height:1.4;letter-spacing:clamp(.15em,.6vw,.28em);text-transform:uppercase;font-weight:700;color:var(--gold-soft)}
-  .hero-message h1{max-width:16ch;margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,7vw,6.8rem);line-height:.94;text-wrap:balance;color:#fffaf4}
-  .hero-summary{max-width:52rem;margin:clamp(1.4rem,3vw,2.5rem) 0 0;font-size:clamp(1.05rem,2vw,1.55rem);line-height:1.55;color:#E9DEF0}
-  .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(.75rem,2vw,1.25rem);margin-top:clamp(1.75rem,4vw,3rem)}
-  .primary-action,.secondary-action{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:clamp(.95rem,1.4vw,1.1rem);text-decoration:none;padding:clamp(.8rem,1.5vw,1.05rem) clamp(1.3rem,2.4vw,1.9rem);border-radius:999px;transition:transform .25s}
-  .primary-action{background:var(--coral);color:#2b160c;box-shadow:0 6px 20px rgba(238,138,94,.35)}
-  .secondary-action{border:1.5px solid var(--lav-soft);color:#ECE1F7}
-  .primary-action:hover,.secondary-action:hover{transform:translateY(-1px)}
-  @media (prefers-reduced-motion:reduce){.hero-image{animation:none;transform:scale(1.02)}}
-  @media(max-width:480px){.hero-message{width:calc(100% - 1.5rem)}}
-
-  /* MISSION */
-  .grade-warm{background:radial-gradient(80% 80% at 28% 30%,rgba(245,195,78,.4),transparent 55%),linear-gradient(150deg,#FBDBB0,#F7C7C3 72%,#EAD9F2)}
-  .quote{font-family:var(--serif);font-size:clamp(24px,3.4vw,40px);line-height:1.22;color:var(--plum);max-width:20ch}
-  .quote .accent{color:var(--coral-deep)}
-  .bleed{position:absolute;inset:0;z-index:0}
-  .vhint{position:absolute;left:24px;bottom:16px;z-index:4;font-size:11px;color:rgba(60,50,71,.5);display:flex;gap:8px;align-items:center}
-  .vhint .pl{width:20px;height:20px;border-radius:50%;border:1px solid rgba(60,50,71,.4);display:inline-flex;align-items:center;justify-content:center;font-size:8px}
-
-  /* VIDEO — extreme bleed */
-  .videofeat{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0;overflow:hidden;background:linear-gradient(155deg,var(--coral),var(--lav) 78%,var(--plum))}
-  .vf-canvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;filter:blur(9px) saturate(1.08);transform:scale(1.15);animation:kb 30s ease-in-out infinite alternate}
-  @keyframes kb{from{transform:scale(1.15) translate(0,0)}to{transform:scale(1.26) translate(-2.5%,-2%)}}
-  .vf-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(255,248,239,.48),rgba(255,248,239,.2) 45%,rgba(250,228,214,.3))}
-  .vf-content{position:relative;z-index:2;padding:26px}
-  .vf-content .eyebrow{color:var(--coral-deep)}
-  .vf-content h2{color:var(--plum);font-size:clamp(32px,5.4vw,70px);margin:10px auto 0}
-  .bigplay{margin:34px auto 0;width:96px;height:96px;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--coral-deep);font-size:32px;cursor:pointer;box-shadow:0 14px 44px rgba(80,50,60,.32);display:flex;align-items:center;justify-content:center;padding-left:7px;transition:transform .25s}
-  .bigplay:hover{transform:scale(1.08)}
-  .ytlabel2{display:inline-block;margin-top:26px;font-size:12px;color:#fff;background:rgba(46,36,57,.55);padding:6px 14px;border-radius:999px}
-
-  /* IMPACT */
-  .impact{background:var(--cream)}
-  .livepill{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--lav);background:var(--lilac);padding:5px 12px;border-radius:999px;margin-left:12px}
-  .livedot{width:8px;height:8px;border-radius:50%;background:#4FB477;animation:pulse 2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,180,119,.5)}70%{box-shadow:0 0 0 7px rgba(79,180,119,0)}100%{box-shadow:0 0 0 0 rgba(79,180,119,0)}}
-  .figs{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:34px}
-  .fig .n{font-family:var(--serif);font-size:clamp(34px,4.6vw,54px);color:var(--coral-deep);line-height:1;font-variant-numeric:tabular-nums}
-  .fig .l{font-size:13px;color:var(--ink-soft);margin-top:8px}
-  .impact .note{margin-top:22px;font-size:12.5px;color:var(--ink-soft);border-left:2px solid var(--line);padding-left:12px;max-width:60ch}
-
-  /* RECORD */
-  .record{background:linear-gradient(180deg,var(--lilac),#F7EFE6)}
-  .tlwrap{margin-top:36px;position:relative}
-  .tline{position:absolute;left:0;top:15px;height:2px;width:100%;background:rgba(138,114,184,.25)}
-  .tfill{position:absolute;left:0;top:15px;height:2px;width:0;background:linear-gradient(90deg,var(--lav),var(--coral),var(--gold));box-shadow:0 0 12px rgba(245,195,78,.6);transition:width 1.6s ease}
-  .tfill.in{width:100%}
-  .tsteps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
-  .tstep .dot{width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--lav)}
-  .tstep.in .dot{background:var(--gold);border-color:var(--coral);box-shadow:0 0 0 6px rgba(245,195,78,.22)}
-  .tstep .yr{font-family:var(--serif);font-size:clamp(22px,3vw,32px);margin-top:14px;color:var(--plum);font-variant-numeric:tabular-nums}
-  .tstep .ev{font-size:13px;color:var(--ink-soft);margin-top:5px;max-width:17ch}
-
-  /* FULL-BLEED IMAGE */
-  .bleedphoto{position:relative;min-height:74vh;display:flex;align-items:flex-end;overflow:hidden}
-  .bp-grade{position:absolute;inset:0;background:radial-gradient(70% 80% at 30% 25%,rgba(245,195,78,.5),transparent),linear-gradient(160deg,var(--lav),var(--coral) 68%,var(--gold))}
-  .bp-grade::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(46,36,57,.62),transparent 58%)}
-  .bp-label{position:absolute;left:24px;top:22px;z-index:3;font-size:11px;color:#fff;background:rgba(0,0,0,.42);padding:5px 12px;border-radius:999px;display:inline-flex;gap:8px;align-items:center}
-  .bp-cap{position:relative;z-index:3;padding:0 26px 54px}
-  .bp-cap p{font-family:var(--serif);font-size:clamp(26px,4.2vw,50px);color:#fff;max-width:16ch;text-shadow:0 2px 24px rgba(0,0,0,.45);margin:0}
-
-  /* PROGRAMS */
-  .progs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-  .prog{position:relative;border-radius:18px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;box-shadow:0 12px 34px rgba(80,60,90,.12)}
-  .prog .pb{position:absolute;inset:0;z-index:-2;transition:transform .8s}
-  .prog:hover .pb{transform:scale(1.06)}
-  .p1 .pb{background:radial-gradient(80% 60% at 50% 20%,rgba(255,244,214,.9),transparent),linear-gradient(160deg,var(--peach),var(--coral))}
-  .p2 .pb{background:radial-gradient(80% 60% at 60% 25%,rgba(255,248,239,.9),transparent),linear-gradient(160deg,var(--gold-soft),var(--gold))}
-  .p3 .pb{background:radial-gradient(80% 60% at 40% 20%,rgba(255,248,239,.9),transparent),linear-gradient(160deg,var(--lav-soft),var(--lav))}
-  .prog .pbody{background:linear-gradient(to top,rgba(255,248,239,.97) 60%,rgba(255,248,239,0));padding:44px 22px 22px}
-  .prog .tg{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}
-  .prog h3{font-size:22px;margin:6px 0 7px}.prog p{font-size:13.5px;color:var(--ink-soft);margin:0}
-
-  /* EVIDENCE */
-  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
-  .fact{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px}
-  .fact .n{font-family:var(--serif);font-size:30px;color:var(--plum)}
-  .fact p{font-size:12.5px;color:var(--ink-soft);margin:8px 0 0}
-  .src{margin-top:14px;font-size:12px;color:var(--ink-soft)}
-  .pubs{display:flex;flex-direction:column;margin-top:26px;border-top:1px solid var(--line)}
-  .pub{display:flex;gap:18px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--line)}
-  .pub .ty{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-deep);font-weight:700;min-width:96px}
-  .pub .ti{font-family:var(--serif);font-size:17px;color:var(--plum)}
-  .pub .mt{margin-left:auto;font-size:13px;color:var(--ink-soft);white-space:nowrap}
-
-  /* NEWS rotator */
-  .newsrot{margin-top:28px;position:relative;min-height:150px}
-  .slide{position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:opacity .7s,transform .7s;pointer-events:none}
-  .slide.active{opacity:1;transform:none;pointer-events:auto}
-  .slide .dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--coral-deep);font-weight:600}
-  .slide h3{font-size:clamp(22px,3vw,32px);margin:8px 0 0;max-width:24ch}
-  .dots{display:flex;gap:8px;margin-top:22px}
-  .dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
-  .dots button.on{background:var(--coral)}
-
-  /* COLLABORATORS */
-  .collab{background:var(--cream)}
-  .logos{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
-  .logoph{height:52px;min-width:120px;flex:0 0 auto;background:#fff;border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#B7AD98;font-size:11px;padding:0 16px;text-align:center}
-
-  /* GET HELP */
-  .gethelp{background:linear-gradient(150deg,#F7C7C3,#EAD9F2);text-align:center;align-items:center}
-  .gethelp .wrap{max-width:720px}
-  .gethelp h2{color:var(--plum)}.gethelp p{color:var(--plum)}
-
-  /* CTA + footer */
-  .cta{background:radial-gradient(70% 90% at 50% 120%,rgba(245,195,78,.85),transparent 60%),linear-gradient(160deg,#F7C3C0,#FBD9AE);text-align:center;align-items:center}
-  .cta .wrap{max-width:720px}.cta h2{color:var(--plum)}.cta .lede{color:var(--plum);margin-left:auto;margin-right:auto}
-  .helpbar{background:var(--plum);color:#EFE6F2;padding:16px 26px;text-align:center;font-size:14px}
-  .helpbar b{color:#fff}.helpbar .ph{color:var(--gold);font-weight:700}
-  .foot{background:var(--plum);padding:52px 26px 30px}
-  .fgrid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:26px}
-  .foot .fl{height:40px;filter:brightness(0) invert(1);opacity:.92}
-  .fcol h5{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
-  .fcol a{display:block;color:#D9CFE0;text-decoration:none;font-size:13.5px;margin-bottom:8px}
-  .fbrand p{color:#C9BDD2;font-size:13px;max-width:34ch;margin:12px 0 0}
-  .ftrust{max-width:1120px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:#A99FB4}
-
-  @media(max-width:900px){.links{display:none}.figs{grid-template-columns:repeat(3,1fr)}.facts{grid-template-columns:1fr 1fr}.progs{grid-template-columns:1fr}.tsteps{grid-template-columns:1fr 1fr}.tline,.tfill{display:none}.fgrid{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.figs{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr}.pub{flex-wrap:wrap;gap:4px}.pub .mt{margin-left:0}}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.livedot{animation:none}.tfill{transition:none}.prog:hover .pb{transform:none}.tk-track,.vf-canvas{animation:none}.vf-canvas{display:none}.slide{position:relative;opacity:1;transform:none}}
-</style>
-
-<nav class="nav" id="nav">
-  <img class="logo-img" src="assets/achrh-logo.png" alt="ACHRH — AustralAsian Centre for Human Rights & Health">
-  <span class="links"><a href="get-help.html" class="hl">Get&nbsp;Help</a><a href="our-work.html">Our&nbsp;Work</a><a href="research-resources.html">Research</a><a href="about-us.html">About</a><a href="news-media.html">News</a></span>
-  <span class="right"><a class="pill donate" href="get-involved.html">Donate</a></span>
+<!-- mobile menu -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" aria-hidden="true">
+  <button class="mclose" aria-label="Close menu">✕</button>
+  <a class="m-help" href="#">Get Help</a>
+  <a href="#">Our Work</a><a href="#impact">Our Impact</a><a href="#news">News &amp; Events</a>
+  <a href="#resource">Resources</a><a href="#people">About</a>
+  <a class="btn btn-primary m-donate" href="#support">Donate</a>
+  <p class="m-help-num">Help line · <a href="tel:1800737732">1800RESPECT — 1800 737 732</a></p>
 </nav>
 
-<div class="ticker on" id="ticker" aria-label="Latest highlights">
-  <div class="tk-track">
-    <span style="display:inline-flex;gap:40px">
-      <span class="tk-item">Dowry abuse became law in Victoria — <b>29 March 2019</b></span>
-      <span class="tk-item"><b>Recommendation 156</b>, Royal Commission into Family Violence</span>
-      <span class="tk-item"><b>8</b> programs funded by state &amp; federal governments</span>
-      <span class="tk-item"><b>4,500+</b> community members reached</span>
-      <span class="tk-item">Recognised in the <b>National Principles</b> on coercive control, 2023</span>
-    </span>
-    <span aria-hidden="true" style="display:inline-flex;gap:40px">
-      <span class="tk-item">Dowry abuse became law in Victoria — <b>29 March 2019</b></span>
-      <span class="tk-item"><b>Recommendation 156</b>, Royal Commission into Family Violence</span>
-      <span class="tk-item"><b>8</b> programs funded by state &amp; federal governments</span>
-      <span class="tk-item"><b>4,500+</b> community members reached</span>
-      <span class="tk-item">Recognised in the <b>National Principles</b> on coercive control, 2023</span>
-    </span>
-  </div>
-</div>
+<main id="main">
 
-<!-- UNIFIED RESPONSIVE HERO -->
+<!-- ================= 1 · FAMILY HERO (approved — protected) ================= -->
 <section class="hero" id="top">
   <div class="hero-media">
     <img class="hero-image" src="assets/hero-family-centred.jpg" alt="A family sharing a warm moment outdoors">
   </div>
-
   <div class="hero-message">
-    <p class="hero-eyebrow">Australasian Centre for Human Rights &amp; Health</p>
+    <p class="eyebrow">Australasian Centre for Human Rights &amp; Health</p>
     <h1>Strengthening families through harm prevention.</h1>
     <p class="hero-summary">A Melbourne think tank building safer, stronger families through education, research and community participatory art. Since 2012.</p>
     <div class="hero-actions">
-      <a class="primary-action" href="get-help.html">Find support now</a>
-      <a class="secondary-action" href="#record">See how we changed the law &darr;</a>
+      <a class="btn btn-primary" href="#">Find support now</a>
+      <a class="btn btn-ghost" href="#impact">See how we changed the law ↓</a>
     </div>
   </div>
 </section>
 
-<!-- MISSION -->
-<section class="stage">
-  <div class="bleed grade-warm" data-par="0.10"></div>
-  <div class="vhint"><span class="pl">▶</span> Full-bleed photo — Project Sneh community theatre</div>
-  <div class="wrap">
-    <div class="eyebrow rv">Who we are</div>
-    <p class="quote rv d1">“There is no higher form of contact with humans than <span class="accent">art.</span> We use it in service of human rights — to find community solutions.”</p>
-    <div class="row"><a class="btn b-quiet rv d2" href="about-us.html">Our story →</a></div>
+<!-- ================= 2 · CREDIBILITY / PROOF (PROVE) ================= -->
+<section class="proof" aria-label="Credibility at a glance">
+  <div class="proof-track">
+    <span class="proof-item"><span class="dot">✦</span> Dowry abuse recognised in <b>Victorian family-violence law — 29 March 2019</b></span>
+    <span class="proof-item"><span class="dot">✦</span> <b>Recommendation 156</b>, Royal Commission into Family Violence</span>
+    <span class="proof-item"><span class="dot">✦</span> Contributed to <b>National Principles to Address Coercive Control (2023)</b></span>
+    <span class="proof-item"><span class="dot">✦</span> A Melbourne think tank <b>since 2012</b></span>
+    <!-- duplicated for seamless marquee -->
+    <span class="proof-item" aria-hidden="true"><span class="dot">✦</span> Dowry abuse recognised in <b>Victorian family-violence law — 29 March 2019</b></span>
+    <span class="proof-item" aria-hidden="true"><span class="dot">✦</span> <b>Recommendation 156</b>, Royal Commission into Family Violence</span>
+    <span class="proof-item" aria-hidden="true"><span class="dot">✦</span> Contributed to <b>National Principles to Address Coercive Control (2023)</b></span>
+    <span class="proof-item" aria-hidden="true"><span class="dot">✦</span> A Melbourne think tank <b>since 2012</b></span>
   </div>
 </section>
 
-<!-- VIDEO — extreme bleed -->
-<section class="videofeat">
-  <canvas id="cine2" class="vf-canvas" aria-hidden="true"></canvas>
-  <div class="vf-scrim"></div>
-  <div class="vf-content">
-    <div class="eyebrow rv in">Watch</div>
-    <h2 class="rv in">Our story, in two minutes.</h2>
-    <button class="bigplay rv in" aria-label="Play the ACHRH story video">▶</button>
-    <div><span class="ytlabel2">▶ YouTube · “About ACHRH” — full-bleed, plays inline</span></div>
-  </div>
-</section>
-
-<!-- IMPACT -->
-<section class="stage impact">
-  <div class="wrap">
-    <div style="display:flex;align-items:center;flex-wrap:wrap">
-      <div class="eyebrow rv">Our impact</div>
-      <span class="livepill rv"><span class="livedot"></span>Updated live from our records</span>
+<!-- ================= 3 · GET HELP / PRIMARY PATHWAYS (ACT) ================= -->
+<section class="chapter help-band" aria-label="Get help">
+  <div class="wrap rv">
+    <p class="eyebrow" style="color:var(--coral-deep)">You are not alone</p>
+    <p class="helpline" style="margin:.4em 0 0">If you or someone you know needs help, call
+      <a class="num" href="tel:1800737732">1800RESPECT — 1800&nbsp;737&nbsp;732</a></p>
+    <div class="help-paths">
+      <a href="#">I need support now</a>
+      <a href="#">Understand the warning signs</a>
+      <a href="#">Help someone I know</a>
     </div>
-    <h2 class="rv d1" style="margin-top:12px">Evidence you can hold.</h2>
-    <div class="figs">
-      <div class="fig rv"><div class="n" data-count="30">0</div><div class="l">Interactive workshops</div></div>
-      <div class="fig rv d1"><div class="n" data-count="80">0</div><div class="l">Media appearances</div></div>
-      <div class="fig rv d2"><div class="n" data-count="4500" data-suffix="+">0</div><div class="l">Participants reached</div></div>
-      <div class="fig rv d3"><div class="n" data-count="25">0</div><div class="l">Screenings of ‘Finding Affection’</div></div>
-      <div class="fig rv d3"><div class="n" data-count="8">0</div><div class="l">Programs funded by state &amp; federal govt</div></div>
-    </div>
-    <p class="note rv">These numbers read from ACHRH’s <b>Metrics</b> records — update the record once, every page updates. No hand-editing the homepage. (Figures pending 2026 confirmation.)</p>
   </div>
 </section>
 
-<!-- RECORD -->
-<section class="stage record" id="record">
-  <div class="wrap">
-    <div class="eyebrow rv">Advocacy that changed the law</div>
-    <h2 class="rv d1" style="margin-top:12px">How evidence became law.</h2>
-    <div class="tlwrap">
-      <div class="tline"></div><div class="tfill" id="tfill"></div>
-      <div class="tsteps">
-        <div class="tstep rv"><span class="dot"></span><div class="yr">2013</div><div class="ev">Anti-dowry campaign begins</div></div>
-        <div class="tstep rv d1"><span class="dot"></span><div class="yr">2016</div><div class="ev">Royal Commission — Rec. 156</div></div>
-        <div class="tstep rv d2"><span class="dot"></span><div class="yr">2017</div><div class="ev">Federal Senate inquiry</div></div>
-        <div class="tstep rv d3"><span class="dot"></span><div class="yr">2019</div><div class="ev">Dowry abuse becomes law, Victoria</div></div>
-        <div class="tstep rv d3"><span class="dot"></span><div class="yr">2023</div><div class="ev">National Principles · coercive control</div></div>
+<!-- ================= 4 · WHO / WHY ACHRH (UNDERSTAND) ================= -->
+<section class="chapter" id="why">
+  <div class="wrap-wide split rev">
+    <div class="rv">
+      <p class="eyebrow">Why we exist</p>
+      <h2 class="h2" style="margin-top:.3em">Human rights and health, for families caught between cultures.</h2>
+      <p class="lede" style="margin-top:1em">ACHRH is an NGO and think tank founded in 2012 that proposes innovative, evidence-led solutions to build safer and stronger families — with a particular focus on preventing dowry abuse, family violence and coercive control in migrant communities.</p>
+      <p style="margin-top:1.2em"><a class="link-arrow" href="#people">Read our story <span class="a">→</span></a></p>
+    </div>
+    <div class="rv d1"><div class="media ph-media"><span class="ph-label">Editorial image — asset to supply</span></div></div>
+  </div>
+</section>
+
+<!-- ================= 5 · WHAT WE DO (UNDERSTAND) ================= -->
+<section class="chapter tint" id="work">
+  <div class="wrap-wide">
+    <div class="sec-head rv"><span class="eyebrow">What we do</span><h2 class="h2">Fields of action, not a catalogue of pages.</h2>
+      <p class="intro">Five areas of work — research, prevention and participatory art — that reinforce one another.</p></div>
+    <div class="tilegrid c3">
+      <a class="tile tile-ph rv" href="#"><span class="spectral"></span><div class="tbg"></div><div class="tbody"><span class="tg">Prevention</span><h3>Preventing Dowry Abuse</h3><p>National advocacy, education and law reform to end dowry-related family violence.</p></div></a>
+      <a class="tile tile-ph2 rv d1" href="#"><span class="spectral"></span><div class="tbg"></div><div class="tbody"><span class="tg">Education</span><h3>Respectful Relationships</h3><p>Mutual Relational &amp; Cultural Respect workshops in community settings.</p></div></a>
+      <a class="tile tile-ph3 rv d2" href="#"><span class="spectral"></span><div class="tbg"></div><div class="tbody"><span class="tg">Participatory art</span><h3>Community Theatre &amp; Arts</h3><p>SNEH Theatre and Natak Vihar — using art in service of human rights.</p></div></a>
+      <a class="tile tile-ph4 rv" href="#"><span class="spectral"></span><div class="tbg"></div><div class="tbody"><span class="tg">Community</span><h3>Community / International Work</h3><p>Partnerships across Australia and India for cultural change.</p></div></a>
+      <a class="tile tile-ph5 rv d1" href="#"><span class="spectral"></span><div class="tbg"></div><div class="tbody"><span class="tg">Evidence</span><h3>Research &amp; Advocacy</h3><p>Academic papers and parliamentary submissions that move policy.</p></div></a>
+      <a class="tile tile-ph rv d2" href="#work" style="justify-content:center;align-items:center;text-align:center"><span class="spectral"></span><div class="tbg" style="background:linear-gradient(150deg,var(--plum),var(--coral-deep))"></div><div class="tbody"><h3 style="margin:0">Explore all of our work <span aria-hidden="true">→</span></h3></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6 · SUPREME VIDEO / MONUMENTAL MOMENT (FEEL) ================= -->
+<section class="supreme" data-supreme aria-label="Featured film">
+  <span class="asset-note">Approved film to supply</span>
+  <div class="poster" style="background-image:linear-gradient(150deg,#2b1a38,#5a3a52)"></div>
+  <!-- <video> intentionally left without a source until an approved asset (e.g. Finding Affection / SNEH theatre) is supplied. Poster + fallback prove the component. -->
+  <div class="veil"></div>
+  <div class="s-body glass rv">
+    <p class="eyebrow" style="color:var(--gold-soft)">Community theatre</p>
+    <h2 class="h2">“There is no higher form of contact with humans than art.”</h2>
+    <p>We use participatory theatre in service of human rights — to find community solutions to family violence.</p>
+    <button class="playbtn" type="button" aria-label="Play featured film">▶ Play</button>
+  </div>
+</section>
+
+<!-- ================= 7 · OUR IMPACT — did vs changed (PROVE) ================= -->
+<section class="chapter" id="impact">
+  <div class="wrap-wide">
+    <div class="sec-head rv"><span class="eyebrow">Our impact</span><h2 class="h2">What we did — and what changed because we acted.</h2></div>
+    <div class="did-changed">
+      <div class="dc-col dc-did rv"><span class="lab">What ACHRH did</span>
+        <p style="margin-top:.6em">Built a national campaign, delivered community education and participatory theatre, and made evidence-based submissions to government.</p></div>
+      <div class="dc-col dc-changed rv d1"><span class="lab">What changed</span>
+        <p style="margin-top:.6em">Dowry abuse was recognised in Victorian family-violence law, and coercive control entered national policy.</p></div>
+    </div>
+    <div class="constellation">
+      <div class="metric rv"><div class="n" data-count="30" data-display="30" data-suffix="+">0</div><div class="l">community workshops delivered <span class="tag-verify">Verification required</span></div></div>
+      <div class="metric rv d1"><div class="n" data-count="4500" data-display="4,500" data-suffix="+">0</div><div class="l">community members reached <span class="tag-verify">Verification required</span></div></div>
+      <div class="metric rv d2"><div class="n" data-count="1" data-display="1">0</div><div class="l">landmark change in Victorian law (29 March 2019) <span class="tag-verify" style="background:#cfe8cf;color:#2c5a2c">Verified public fact</span></div></div>
+    </div>
+    <p style="margin-top:1.6rem"><a class="link-arrow" href="#">See the full impact record <span class="a">→</span></a></p>
+  </div>
+</section>
+
+<!-- ================= 8 · LAW / POLICY CHANGE (PROVE) ================= -->
+<section class="chapter ink-bg" id="law">
+  <div class="wrap-wide">
+    <div class="sec-head rv"><span class="eyebrow" style="color:var(--gold)">How we changed law &amp; policy</span>
+      <h2 class="h2" style="color:#fff">A decade of advocacy, milestone by milestone.</h2></div>
+    <div class="timeline rv">
+      <div class="tl-line"></div>
+      <div class="tl-row">
+        <div class="tl-node"><span class="dot"></span><div class="yr">2013</div><div class="ev" style="color:#CDBFD6">Anti-dowry campaign begins</div></div>
+        <div class="tl-node"><span class="dot"></span><div class="yr">2016</div><div class="ev" style="color:#CDBFD6">Royal Commission — Recommendation 156</div></div>
+        <div class="tl-node"><span class="dot"></span><div class="yr">2017</div><div class="ev" style="color:#CDBFD6">Senate inquiry into dowry abuse</div></div>
+        <div class="tl-node"><span class="dot"></span><div class="yr">2019</div><div class="ev" style="color:#CDBFD6">Dowry abuse in Victorian family-violence law</div></div>
+        <div class="tl-node"><span class="dot"></span><div class="yr">2023</div><div class="ev" style="color:#CDBFD6">National Principles on coercive control</div></div>
+        <div class="tl-node"><span class="dot"></span><div class="yr">2024</div><div class="ev" style="color:#CDBFD6">Family Law Act reform <span class="tag-verify">confirm</span></div></div>
+      </div>
+    </div>
+    <div class="pathway rv d1" aria-label="Evidence pathway">
+      <span class="step">Community experience</span><span class="arr">→</span>
+      <span class="step">Research</span><span class="arr">→</span>
+      <span class="step">Advocacy</span><span class="arr">→</span>
+      <span class="step">Government process</span><span class="arr">→</span>
+      <span class="step end">Policy / law change</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9 · REVOLVING CURATED PHOTO WALL (FEEL) ================= -->
+<section class="chapter" id="gallery">
+  <div class="wrap-wide">
+    <div class="sec-head rv"><span class="eyebrow">A living archive</span><h2 class="h2">A decade of community, theatre and advocacy.</h2>
+      <p class="intro">A curated wall of ACHRH moments — rotating slowly, one at a time.</p></div>
+    <div class="exhibit rv" data-exhibit aria-label="Curated photo exhibition">
+      <div class="frame f-land">
+        <div class="slide ph-slide-a on"></div><div class="slide ph-slide-c"></div><div class="slide ph-slide-b"></div>
+        <div class="scrim-dark"></div><span class="cap glass-cream" style="padding:6px 10px">Community theatre — asset to supply</span>
+      </div>
+      <div class="frame f-port">
+        <div class="slide ph-slide-b on"></div><div class="slide ph-slide-d"></div>
+        <div class="scrim-dark"></div><span class="cap glass-cream" style="padding:6px 10px">Portrait — asset to supply</span>
+      </div>
+      <div class="frame f-wide">
+        <div class="slide ph-slide-d on"></div><div class="slide ph-slide-a"></div>
+        <div class="scrim-dark"></div><span class="cap glass-cream" style="padding:6px 10px">Advocacy moment — asset to supply</span>
+      </div>
+    </div>
+    <div class="exhibit-controls">
+      <button data-exhibit-toggle aria-label="Pause or resume rotation">⏸</button>
+      <button data-exhibit-next aria-label="Show next images">⏭</button>
+      <span class="state" data-exhibit-state>Rotating</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 · FEATURED PUBLIC RESOURCE (the future CARE→Wix proof surface) ================= -->
+<section class="chapter warm" id="resource">
+  <div class="wrap-wide">
+    <div class="sec-head rv"><span class="eyebrow">Featured resource</span><h2 class="h2">Read the evidence.</h2></div>
+    <div class="feature-res rv d1">
+      <div class="fr-media"><span class="ph-label">Resource artwork — asset to supply</span></div>
+      <div class="fr-body">
+        <span class="fr-type">Explainer · Guide</span>
+        <h3>Understanding Dowry and Dowry Abuse in Australia</h3>
+        <p class="meta">An academic-yet-accessible explainer on how dowry abuse manifests as family violence — and what protections exist.</p>
+        <p style="margin-top:1.4em"><a class="btn btn-primary" href="#">Read the guide</a></p>
+        <p class="meta" style="margin-top:1em;font-size:.8rem"><em>Wave-1 slot. Later surfaces one canonical Resource item (no duplicate copy).</em></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FULL-BLEED IMAGE -->
-<section class="bleedphoto">
-  <div class="bp-grade" data-par="0.12"></div>
-  <div class="bp-label"><span>▣</span> Full-bleed image — edge-to-edge photo (e.g. Project Sneh community theatre)</div>
-  <div class="bp-cap"><p class="rv">Art in service of human rights.</p></div>
+<!-- ================= 11 · NEWS / CURRENT ACTIVITY (UNDERSTAND) ================= -->
+<section class="chapter" id="news">
+  <div class="wrap-wide">
+    <div class="sec-head rv"><span class="eyebrow">News &amp; events</span><h2 class="h2">What’s happening now.</h2></div>
+    <div class="news-row">
+      <a class="news-card rv" href="#"><span class="date">2026</span><h3>ACHRH at Women Deliver 2026</h3><p class="meta">ACHRH joins the global conference on gender equality. <span class="tag-verify">Preview reference</span></p></a>
+      <a class="news-card rv d1" href="#"><span class="date">2026</span><h3>Emergency support for international students</h3><p class="meta">A new call to strengthen protection for students on temporary visas. <span class="tag-verify">Preview reference</span></p></a>
+      <a class="news-card rv d2" href="#"><span class="date">Latest</span><h3>Latest update</h3><p class="meta">Newest bulletin. <span class="tag-verify">Content to supply</span></p></a>
+    </div>
+    <p style="margin-top:1.6rem"><a class="link-arrow" href="#">All news &amp; events <span class="a">→</span></a></p>
+  </div>
 </section>
 
-<!-- PROGRAMS -->
-<section class="stage">
-  <div class="wrap">
-    <div class="eyebrow rv">What we do</div>
-    <h2 class="rv d1" style="margin-top:12px">Programs that change how families relate.</h2>
-    <div class="progs">
-      <div class="prog p1 rv"><div class="pb"></div><div class="pbody"><span class="tg">Community theatre</span><h3>Project Sneh</h3><p>Participatory theatre that opens conversations no lecture can.</p></div></div>
-      <div class="prog p2 rv d1"><div class="pb"></div><div class="pbody"><span class="tg">Award-winning</span><h3>Mutual Relational Respect</h3><p>Respectful relations — the key to a happy life. Victorian Multicultural Award for Innovation.</p></div></div>
-      <div class="prog p3 rv d2"><div class="pb"></div><div class="pbody"><span class="tg">Cross-border</span><h3>ACHRH Overseas</h3><p>Empowering women and training future leaders across two nations.</p></div></div>
+<!-- ================= 12 · PEOPLE / PARTNERS (FEEL) ================= -->
+<section class="chapter tint" id="people">
+  <div class="wrap-wide portrait-story">
+    <div class="rv"><div class="portrait"><span class="ph-label">Portrait — asset to supply</span></div></div>
+    <div class="rv d1">
+      <p class="eyebrow">Our founder</p>
+      <h2 class="h2" style="margin-top:.3em">Professor Manjula O’Connor</h2>
+      <p class="lede" style="margin-top:.8em">Founding Director and psychiatrist. Prof O’Connor has led ACHRH’s work on dowry abuse, coercive control and migrant family wellbeing — bridging clinical practice, research and advocacy.</p>
+      <p style="margin-top:1.2em"><a class="link-arrow" href="#">Meet our people &amp; partners <span class="a">→</span></a></p>
+      <div class="partner-strip">
+        <span class="partner-chip">Partner logo</span><span class="partner-chip">Partner logo</span>
+        <span class="partner-chip">ACNC registered</span><span class="partner-chip">Membership</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EVIDENCE -->
-<section class="stage impact">
+<!-- ================= 13 · SUPPORT / DONATE (ACT) ================= -->
+<section class="chapter" id="support">
   <div class="wrap">
-    <div class="eyebrow rv">Why this matters</div>
-    <h2 class="rv d1" style="margin-top:12px">The facts we work to change.</h2>
-    <div class="facts">
-      <div class="fact rv"><div class="n">1/week</div><p>One woman a week is killed by a current or former partner.</p></div>
-      <div class="fact rv d1"><div class="n">1 in 3</div><p>Women have experienced physical violence since age 15.</p></div>
-      <div class="fact rv d2"><div class="n">1 in 5</div><p>Australian women have experienced sexual violence.</p></div>
-      <div class="fact rv d3"><div class="n">18–24</div><p>Young women experience significantly higher rates.</p></div>
+    <div class="support-band rv">
+      <p class="eyebrow" style="color:var(--coral-deep)">Support our work</p>
+      <h2 class="h2">Help build safer, stronger families.</h2>
+      <p style="max-width:52ch;margin:1em auto 0;color:var(--plum)">Your support powers education, research and participatory art that prevents harm before it happens.</p>
+      <div class="row">
+        <a class="btn btn-plum" href="#">Donate</a>
+        <a class="btn btn-ghost" href="#" style="border-color:var(--plum);color:var(--plum)">Volunteer</a>
+        <a class="btn btn-ghost" href="#" style="border-color:var(--plum);color:var(--plum)">Partner with us</a>
+      </div>
+      <p class="meta" style="margin-top:1.4em;font-size:.82rem;color:var(--plum)">ACNC registered charity · Donation processing added in a later wave.</p>
     </div>
-    <p class="src rv">Source: Our Watch · Australian Bureau of Statistics, Personal Safety Survey 2017.</p>
-    <div class="pubs rv">
-      <div class="pub"><span class="ty">Explainer</span><span class="ti">Understanding dowry and dowry abuse in Australia</span><span class="mt">Read →</span></div>
-      <div class="pub"><span class="ty">Blueprint</span><span class="ti">Advocacy on behalf of temporary visa holders — a blueprint for reform</span><span class="mt">2023</span></div>
-      <div class="pub"><span class="ty">Submission</span><span class="ti">Senate inquiry into dowry abuse</span><span class="mt">2017 · PDF</span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- helpline band above footer -->
+<div class="helpbar">Help line · <a href="tel:1800737732">1800RESPECT — 1800 737 732</a> · If you are in immediate danger call <a href="tel:000">000</a></div>
+
+<!-- ================= 14 · FOOTER ================= -->
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <img class="fl" src="assets/achrh-logo.png" alt="ACHRH">
+      <p class="about">AustralAsian Centre for Human Rights &amp; Health — building safer, stronger families through education, research and community participatory art. Since 2012.</p>
     </div>
-    <div class="row"><a class="btn b-quiet" href="research-resources.html">All research &amp; submissions →</a></div>
+    <div><h5>Get Help</h5><a href="#">I need support now</a><a href="#">Understand the warning signs</a><a href="#">Support resources</a></div>
+    <div><h5>Our Work</h5><a href="#">Programs</a><a href="#impact">Our impact</a><a href="#">Research &amp; advocacy</a></div>
+    <div><h5>About</h5><a href="#people">Our story</a><a href="#">People</a><a href="#">Partners</a></div>
+    <div><h5>Connect</h5><a href="#news">News &amp; events</a><a href="#">Newsletter</a><a href="#">Contact</a><a href="#">Our history / Archive</a></div>
   </div>
-</section>
-
-<!-- NEWS -->
-<section class="stage record">
-  <div class="wrap">
-    <div class="eyebrow rv">Latest</div>
-    <h2 class="rv d1" style="margin-top:10px">News &amp; events.</h2>
-    <div class="newsrot rv d1" id="newsrot">
-      <div class="slide active"><div class="dt">2 Apr 2023 · News</div><h3>Advocacy on behalf of temporary visa holders — the blueprint for reform.</h3></div>
-      <div class="slide"><div class="dt">5 Feb 2021 · News</div><h3>Why coercive controlling behaviours must be understood and named — Dr Manjula O’Connor.</h3></div>
-      <div class="slide"><div class="dt">8 Jun 2020 · News</div><h3>Emergency support for Victoria’s international students.</h3></div>
-    </div>
-    <div class="dots" id="dots"></div>
-    <div class="row"><a class="btn b-quiet" href="news-media.html">All news &amp; events →</a></div>
+  <div class="trust-bar">
+    <span>ACNC registered charity</span><span>ABN — pending</span><span>Acknowledgement of Country</span><span>Privacy &amp; safety</span>
   </div>
-</section>
-
-<!-- COLLABORATORS -->
-<section class="stage collab" style="min-height:auto;padding:70px 26px">
-  <div class="wrap">
-    <div class="eyebrow rv">Trusted partners</div>
-    <h2 class="rv d1" style="margin-top:10px;font-size:clamp(22px,3vw,32px)">In collaboration with.</h2>
-    <div class="logos rv d1">
-      <div class="logoph">UNSW Gendered Violence Research Network</div>
-      <div class="logoph">Brotherhood of St Laurence</div>
-      <div class="logoph">IndianCare</div>
-      <div class="logoph">ISKCON</div>
-      <div class="logoph">OMGA</div>
-      <div class="logoph">Telugu Ladies Club</div>
-    </div>
-    <p class="src rv" style="margin-top:18px">Members of Harmony Alliance · UN Association of Australia · National Council of Women · AWAVA · Committee for Status of Women, New York.</p>
-  </div>
-</section>
-
-<!-- GET HELP -->
-<section class="stage gethelp" id="gethelp">
-  <div class="wrap">
-    <div class="eyebrow rv">You are not alone</div>
-    <h2 class="rv d1" style="margin-top:10px">Worried about someone — or yourself?</h2>
-    <p class="lede rv d2">Recognise the early signs, check the health of your relationship privately, or reach out for support. Help is confidential and one tap away.</p>
-    <div class="row rv d3" style="justify-content:center"><a class="btn b-fill" href="get-help.html">Check your relationship</a><a class="btn b-ghost" href="get-help.html" style="border-color:var(--plum);color:var(--plum)">Support a friend</a></div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="stage cta" id="cta">
-  <div class="wrap">
-    <div class="eyebrow rv">Be part of the next chapter</div>
-    <h2 class="rv d1" style="margin-top:12px">Help build safer, stronger families.</h2>
-    <p class="lede rv d2">Donate, volunteer or partner with us.</p>
-    <div class="row rv d3" style="justify-content:center"><a class="btn b-fill" href="get-involved.html">Donate</a><a class="btn b-ghost" href="get-involved.html" style="border-color:var(--plum);color:var(--plum)">Volunteer with us</a></div>
-  </div>
-</section>
-
-<div class="helpbar"><b>Need support now?</b> 1800RESPECT · <span class="ph">1800&nbsp;737&nbsp;732</span> — free, confidential, 24/7.</div>
-
-<footer class="foot">
-  <div class="fgrid">
-    <div class="fcol fbrand"><img class="fl" src="assets/achrh-logo.png" alt="ACHRH"><p>AustralAsian Centre for Human Rights &amp; Health. Building safer, stronger families since 2012.</p></div>
-    <div class="fcol"><h5>Get Help</h5><a href="get-help.html">Support now</a><a href="#">Check your relationship</a><a href="#">Understanding dowry abuse</a></div>
-    <div class="fcol"><h5>Our Work</h5><a href="our-work.html">Programs</a><a href="#">Advocacy</a><a href="#">Research</a></div>
-    <div class="fcol"><h5>About</h5><a href="about-us.html">Our story</a><a href="#">People</a><a href="#">Partners</a></div>
-    <div class="fcol"><h5>Stay in touch</h5><a href="news-media.html">Newsletter</a><a href="contact.html">Contact</a><a href="news-media.html">News &amp; events</a></div>
-  </div>
-  <div class="ftrust"><span>Registered charity · ACNC</span><span>ABN 00 000 000 000</span><span>We acknowledge the Traditional Owners of Country.</span><span>Privacy &amp; safety</span></div>
 </footer>
 
-<script>
-(function(){
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var nav=document.getElementById('nav');
-  addEventListener('scroll',function(){nav.classList.toggle('solid',scrollY>60);},{passive:true});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16});
-  document.querySelectorAll('.rv').forEach(function(el){reduce?el.classList.add('in'):io.observe(el);});
-  var rec=document.getElementById('record');
-  if(rec){var rio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=document.getElementById('tfill');if(f)f.classList.add('in');rec.querySelectorAll('.tstep').forEach(function(s,i){setTimeout(function(){s.classList.add('in');},reduce?0:i*240);});rio.disconnect();}});},{threshold:.3});rio.observe(rec);}
-  function up(el){var t=+el.getAttribute('data-count'),sfx=el.getAttribute('data-suffix')||'';if(reduce){el.textContent=t.toLocaleString()+sfx;return;}var s=null,d=1300;function step(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1),v=Math.floor(t*(p*(2-p)));el.textContent=v.toLocaleString()+(p>=1?sfx:'');if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
-  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){up(e.target);cio.unobserve(e.target);}});},{threshold:.6});
-  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
-  if(!reduce){var L=[].slice.call(document.querySelectorAll('[data-par]')),t=false;addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){var y=scrollY;L.forEach(function(l){l.style.transform='translateY('+(y*+l.getAttribute('data-par'))+'px)';});t=false;});},{passive:true});}
-  function initCine(id){var c=document.getElementById(id);if(!c||reduce){return;}var x=c.getContext('2d'),w,h,blobs=[];var cols=[[245,205,120],[238,138,94],[255,247,227],[199,180,228],[247,190,158]];function size(){w=c.width=c.offsetWidth||c.clientWidth;h=c.height=c.offsetHeight||c.clientHeight;}size();addEventListener('resize',size,{passive:true});for(var i=0;i<16;i++){var col=cols[i%cols.length];blobs.push({x:Math.random()*w,y:Math.random()*h,r:90+Math.random()*170,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.16,a:.14+Math.random()*.22,c:col});}(function draw(){var g=x.createLinearGradient(0,0,w,h);g.addColorStop(0,'#FBE7CF');g.addColorStop(1,'#F6D2CE');x.fillStyle=g;x.fillRect(0,0,w,h);for(var i=0;i<blobs.length;i++){var b=blobs[i];b.x+=b.vx;b.y+=b.vy;if(b.x<-b.r)b.x=w+b.r;if(b.x>w+b.r)b.x=-b.r;if(b.y<-b.r)b.y=h+b.r;if(b.y>h+b.r)b.y=-b.r;var rg=x.createRadialGradient(b.x,b.y,0,b.x,b.y,b.r);rg.addColorStop(0,'rgba('+b.c[0]+','+b.c[1]+','+b.c[2]+','+b.a+')');rg.addColorStop(1,'rgba('+b.c[0]+','+b.c[1]+','+b.c[2]+',0)');x.fillStyle=rg;x.beginPath();x.arc(b.x,b.y,b.r,0,6.283);x.fill();}requestAnimationFrame(draw);})();}
-  initCine('cine2');
-  var slides=[].slice.call(document.querySelectorAll('#newsrot .slide')),dots=document.getElementById('dots'),cur=0;
-  slides.forEach(function(_,i){var b=document.createElement('button');b.className=i===0?'on':'';b.setAttribute('aria-label','News '+(i+1));b.onclick=function(){go(i);};dots.appendChild(b);});
-  function go(i){slides[cur].classList.remove('active');dots.children[cur].classList.remove('on');cur=i;slides[cur].classList.add('active');dots.children[cur].classList.add('on');}
-  if(!reduce&&slides.length>1){setInterval(function(){go((cur+1)%slides.length);},4800);}
-})();
-</script>
-
-
-<script>(function(){function toast(m){var t=document.createElement('div');t.className='pvw-toast';t.textContent=m;
-document.body.appendChild(t);requestAnimationFrame(function(){t.classList.add('show');});
-setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},350);},2600);}
-document.querySelectorAll('a.btn, a.pill').forEach(function(a){var s=(a.textContent||'').trim().toLowerCase();
-if(s.indexOf('donate')>=0||s.indexOf('volunteer')>=0){a.setAttribute('title','Preview only — not operational');
-a.setAttribute('aria-disabled','true');a.addEventListener('click',function(e){e.preventDefault();toast('Preview only — this action is disabled in the design preview.');});}});})();</script>
+<script src="assets/home.js"></script>
 </body>
 </html>
