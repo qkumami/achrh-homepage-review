@@ -129,17 +129,19 @@ main > section[id],#top{scroll-margin-top:110px}   /* clear the fixed banner + h
 /* ============================ HERO (approved — ported, protected) ============================ */
 .hero{position:relative;overflow:hidden;background:#21152d;padding-bottom:clamp(2rem,5vw,5rem)}
 .hero-media{position:relative;width:100%;height:clamp(340px,56vw,680px);overflow:hidden}
-.hero-image{width:100%;height:100%;object-fit:cover;object-position:50% 28%;transform-origin:50% 28%;
+.hero-image{width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform-origin:50% 40%;
   animation:hero-breathe 28s ease-in-out infinite alternate}
-@keyframes hero-breathe{from{transform:scale(1.01)}to{transform:scale(1.045)}}
-/* Responsive focal framing — the wider/shorter the box, the more the top is cropped,
-   so favour the upper part of the photo (child's head) on wide/short desktop boxes.
-   Mobile is height-bound (full vertical shown) so Y is effectively neutral there. */
-@media(min-width:1000px){.hero-image{object-position:50% 23%}}
-/* Mobile: the image is height-bound (full vertical shown) so the focal Y can't move it —
-   the fixed preview banner + nav (~106px) were covering the child's head at the media top.
-   Offset the hero below the fixed chrome so the whole family (incl. the child) reads. */
-@media(max-width:760px){.hero{padding-top:118px}}
+@keyframes hero-breathe{from{transform:scale(1.0)}to{transform:scale(1.03)}}
+/* Desktop / tablet: the shallow capped height (2.12:1 box vs a 3:2 photo) was discarding
+   ~29% of the image. Give the hero a near-photo 16:10 aspect so `cover` keeps meaningful
+   tree space ABOVE the child AND frames the woman fully; then tune the focal. No stretch. */
+@media(min-width:761px){
+  .hero-media{height:auto;aspect-ratio:16 / 10;max-height:900px}
+  .hero-image{object-position:50% 38%;transform-origin:50% 38%}
+}
+/* Mobile: image is height-bound (full vertical already shown) so focal Y is inert — just
+   offset the hero below the fixed preview banner + nav (~106px) so the child isn't covered. */
+@media(max-width:760px){.hero{padding-top:118px}.hero-image{object-position:50% 50%}}
 .hero-message{position:relative;z-index:2;width:min(92%,1080px);margin:calc(-1 * clamp(2.5rem,6vw,5rem)) auto 0;
   padding:clamp(1.75rem,4vw,4rem) clamp(1.5rem,5vw,5rem);background:rgba(31,18,43,.97);color:#fffaf4;
   text-align:left;border-radius:clamp(12px,1.4vw,20px);box-shadow:0 -10px 44px rgba(0,0,0,.30)}
