@@ -102,6 +102,20 @@
     setState();
   });
 
+  /* -------- Quick Exit (Get Help / safety pages only) — replace current history entry with a neutral site.
+     Honest: this leaves the ACHRH page, but cannot erase browser history/logs/caches. -------- */
+  var qe = document.querySelector('.quick-exit');
+  if (qe) {
+    var NEUTRAL = 'https://www.bom.gov.au';
+    function quickExit() { try { location.replace(NEUTRAL); } catch (e) { location.href = NEUTRAL; } }
+    qe.addEventListener('click', quickExit);
+    // Esc pressed twice quickly also exits
+    var lastEsc = 0;
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { var now = e.timeStamp || 0; if (now - lastEsc < 600) quickExit(); lastEsc = now; }
+    });
+  }
+
   /* -------- Supreme Video: user-initiated; when a video plays, calm nearby motion (One-Moving-Object) -------- */
   document.querySelectorAll('[data-supreme]').forEach(function (sec) {
     var v = sec.querySelector('video'), btn = sec.querySelector('.playbtn');

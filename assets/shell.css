@@ -439,6 +439,71 @@ main > section[id]{scroll-margin-top:150px}
 .res-detail-meta dd{margin:.3em 0 0;font-weight:600;color:var(--plum)}
 @media(max-width:720px){.grant-row{grid-template-columns:1fr;gap:.4rem}.res-card{grid-template-columns:auto 1fr}.res-card .raction{grid-column:2;text-align:left}}
 
+/* ============================ WAVE 4 · GET HELP / DONATE / NEWS PRIMITIVES ============================ */
+/* Quick Exit — prominent on Get Help / safety journeys only (element present → JS wires it) */
+.quick-exit{position:fixed;top:42px;right:14px;z-index:320;display:inline-flex;align-items:center;gap:.5em;
+  background:var(--coral-deep);color:#fff;border:0;border-radius:999px;padding:.7em 1.2em;font-weight:700;
+  font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(46,36,57,.28)}
+.quick-exit:hover{background:#c85f38}
+.quick-exit:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(max-width:600px){.quick-exit{top:auto;bottom:14px;right:14px}}
+/* On Get Help / safety pages, Quick Exit owns the top-right — hide the header Donate button
+   there (it remains in the footer) so the two controls don't collide. */
+body.gh .nav .right{display:none}
+@media(max-width:940px){body.gh .quick-exit{top:44px}}
+/* Get Help — calm, safety-first (no cinematic motion) */
+.help-hero{background:linear-gradient(160deg,#F3E7DE,#EAD9F2);padding:calc(clamp(56px,9vw,120px) + 40px) 0 clamp(32px,5vw,56px)}
+.help-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);max-width:20ch}
+.helpline-card{background:var(--plum);color:#F3ECE2;border-radius:20px;padding:clamp(22px,3vw,40px);
+  display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+.helpline-card .hl-num{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);color:#fff}
+.helpline-card .hl-num a{color:var(--gold);text-decoration:none;white-space:nowrap}
+.helpline-card .hl-sub{color:#CDBFD6;font-size:.95rem;max-width:40ch}
+.path-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(24px,3vw,40px)}
+.path-card{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.4vw,30px);
+  text-decoration:none;color:var(--ink);transition:transform var(--t-elev) var(--ease),box-shadow var(--t-elev) var(--ease);border-left:4px solid var(--coral)}
+.path-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(46,36,57,.12)}
+.path-card h3{font-family:var(--serif);font-size:clamp(1.2rem,1.8vw,1.5rem);color:var(--plum);margin:0 0 .3em}
+.path-card p{color:var(--ink-soft);font-size:.95rem;margin:0}
+.path-card .go{display:inline-block;margin-top:.7em;color:var(--coral-deep);font-weight:600;font-size:.9rem}
+/* healthy-relationship dimension list (self-reflective, not a diagnostic) */
+.dim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px);margin-top:clamp(24px,3vw,40px)}
+.dim{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2vw,24px)}
+.dim h4{font-family:var(--serif);color:var(--plum);font-size:1.15rem;margin:0 0 .3em}
+.dim p{color:var(--ink-soft);font-size:.9rem;margin:0}
+.reflect{background:var(--lilac);border-radius:16px;padding:clamp(20px,2.4vw,32px);margin-top:clamp(20px,3vw,32px)}
+.reflect li{margin:.5em 0;color:var(--plum)}
+.safe-note{background:var(--peachbg);border:1px dashed var(--lav-soft);border-radius:12px;padding:14px 18px;
+  color:#7a5b52;font-size:.88rem;margin-top:1.4rem}
+/* Donate */
+.donate-reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);margin-top:clamp(24px,3vw,40px)}
+.donate-reason{text-align:center;padding:clamp(18px,2vw,26px)}
+.donate-reason .ic{font-size:1.8rem}
+.donate-reason h3{font-family:var(--serif);color:var(--plum);font-size:1.2rem;margin:.4em 0 .3em}
+.donate-reason p{color:var(--ink-soft);font-size:.9rem;margin:0}
+.donate-panel{background:var(--plum);color:#F3ECE2;border-radius:22px;padding:clamp(28px,4vw,52px);text-align:center}
+.donate-panel h2{color:#fff}
+.donate-amounts{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin:1.4rem 0}
+.donate-amounts button{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);color:#fff;
+  border-radius:999px;padding:.7em 1.4em;font-weight:700;cursor:pointer;font-size:1rem;transition:background var(--t-micro)}
+.donate-amounts button:hover,.donate-amounts button[aria-pressed="true"]{background:var(--coral);color:#2b160c;border-color:var(--coral)}
+/* News & Events */
+.event-row{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(16px,2.4vw,32px);align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.2vw,26px);
+  text-decoration:none;color:var(--ink);transition:transform var(--t-elev) var(--ease),box-shadow var(--t-elev) var(--ease)}
+.event-row:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(46,36,57,.12)}
+.event-row .datebox{text-align:center;min-width:66px}
+.event-row .datebox .d{font-family:var(--serif);font-size:1.8rem;color:var(--coral-deep);line-height:1}
+.event-row .datebox .mo{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink-soft)}
+.event-row h3{font-family:var(--serif);font-size:clamp(1.1rem,1.6vw,1.35rem);color:var(--plum);margin:.2em 0}
+.event-row .loc{font-size:.86rem;color:var(--ink-soft)}
+.event-row .status{font-weight:600;color:var(--coral-deep);white-space:nowrap;font-size:.85rem}
+.media-row{display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,24px);align-items:baseline;padding:clamp(14px,1.8vw,20px) 0;border-top:1px solid var(--line)}
+.media-row .outlet{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--coral-deep);min-width:130px}
+.media-row h4{font-family:var(--serif);color:var(--plum);font-size:1.1rem;margin:0}
+@media(max-width:900px){.dim-grid{grid-template-columns:1fr 1fr}.donate-reasons{grid-template-columns:1fr}}
+@media(max-width:720px){.path-grid{grid-template-columns:1fr}.dim-grid{grid-template-columns:1fr}.event-row{grid-template-columns:auto 1fr}.event-row .status{grid-column:2}.media-row{grid-template-columns:1fr;gap:.3rem}}
+
 /* ============================ REVEAL (editorial) ============================ */
 .rv{opacity:0;transform:translateY(26px);transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease)}
 .rv.in{opacity:1;transform:none}
