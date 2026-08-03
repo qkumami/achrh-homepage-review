@@ -545,3 +545,14 @@ body.gh .nav .right{display:none}
   .frame .slide{transition:none}
   .frame .slide.on{opacity:1}
 }
+
+/* ===== Wave 5 — Get Help support-services grid (additive; hero untouched) ===== */
+.svc-grid{display:grid;gap:var(--gutter);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:1.4rem}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.25rem}
+.svc h3{font-size:1.02rem;margin:0 0 .15em}
+.svc .svc-num{font-weight:700;margin:0 0 .35em;font-size:1.05rem}
+.svc .svc-num a{color:var(--coral-deep)}
+.svc p{margin:.1em 0;font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+.svc .vic{display:inline-block;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--lav);border:1px solid var(--lav-soft);border-radius:999px;padding:.1em .6em;margin-top:.5em}
+/* small-screen: let the emergency helpline number shrink/wrap so it never overflows narrow phones */
+@media(max-width:430px){.helpline-card .hl-num{font-size:1.2rem}.helpline-card .hl-num a{white-space:normal}}
