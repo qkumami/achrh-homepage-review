@@ -396,6 +396,49 @@ main > section[id]{scroll-margin-top:150px}
 @media(max-width:900px){.areas{grid-template-columns:1fr}.area-primary{grid-row:auto}}
 @media(max-width:720px){.person-row{grid-template-columns:1fr}.person-row .pr-portrait{max-width:150px}}
 
+/* ============================ WAVE 3 · IMPACT + RESOURCES PRIMITIVES ============================ */
+/* Recognition / Proof sequence (awards) — restrained institutional rows, not a trophy wall */
+.recognition{margin-top:clamp(24px,3vw,44px)}
+.rec-row{display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,40px);align-items:baseline;
+  padding:clamp(18px,2.4vw,28px) 0;border-top:1px solid var(--line)}
+.rec-row .yr{font-family:var(--serif);font-weight:600;font-size:clamp(1.4rem,2.4vw,2rem);color:var(--coral-deep);white-space:nowrap}
+.rec-row h3{font-size:clamp(1.15rem,1.8vw,1.5rem);margin:0 0 .2em}
+.rec-row .body{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--ink-soft)}
+.rec-row p{color:var(--ink-soft);margin:.4em 0 0;max-width:60ch}
+/* Funded programs & grants — calm evidence rows */
+.grant-row{display:grid;grid-template-columns:1.3fr 1fr auto;gap:clamp(14px,2vw,28px);align-items:center;
+  padding:clamp(16px,2vw,24px) 0;border-top:1px solid var(--line)}
+.grant-row h4{font-family:var(--serif);font-size:1.15rem;color:var(--plum);margin:0}
+.grant-row .funder{color:var(--ink-soft);font-size:.92rem}
+.grant-row .period{color:var(--coral-deep);font-weight:600;font-size:.9rem;white-space:nowrap}
+/* Resource library cards — metadata-led, not a file dump */
+.cat-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:clamp(20px,3vw,32px)}
+.cat-nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.55em 1.1em;
+  font-weight:600;font-size:.9rem;color:var(--plum);text-decoration:none;transition:transform var(--t-micro),background var(--t-micro)}
+.cat-nav a:hover,.cat-nav a[aria-current="true"]{background:var(--plum);color:#fff;transform:translateY(-1px)}
+.res-list{display:grid;gap:clamp(14px,2vw,20px);margin-top:clamp(20px,3vw,32px)}
+.res-card{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(16px,2.4vw,28px);align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.2vw,26px);
+  text-decoration:none;color:var(--ink);transition:transform var(--t-elev) var(--ease),box-shadow var(--t-elev) var(--ease)}
+.res-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(46,36,57,.12)}
+.res-card .cover{width:64px;height:80px;border-radius:8px;background:linear-gradient(150deg,var(--plum),var(--lav));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;flex-shrink:0}
+.res-card .cover.paper{background:linear-gradient(150deg,#2b6a52,#3f8f6f)}
+.res-card .cover.sub{background:linear-gradient(150deg,#3a2340,#7a4a5a)}
+.res-card .cover.report{background:linear-gradient(150deg,var(--coral-deep),var(--gold))}
+.res-card .cover.film{background:linear-gradient(150deg,#1a1020,#5a3a52)}
+.res-card .cover.guide{background:linear-gradient(150deg,var(--lav),var(--coral))}
+.res-card .rtype{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--coral-deep)}
+.res-card h3{font-family:var(--serif);font-size:clamp(1.1rem,1.6vw,1.35rem);color:var(--plum);margin:.3em 0}
+.res-card .rmeta{font-size:.86rem;color:var(--ink-soft)}
+.res-card .raction{font-weight:600;color:var(--coral-deep);white-space:nowrap;font-size:.9rem}
+/* Resource detail metadata block */
+.res-detail-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(14px,2vw,24px);
+  background:var(--lilac);border-radius:16px;padding:clamp(20px,2.4vw,30px);margin:clamp(20px,3vw,32px) 0}
+.res-detail-meta dt{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink-soft)}
+.res-detail-meta dd{margin:.3em 0 0;font-weight:600;color:var(--plum)}
+@media(max-width:720px){.grant-row{grid-template-columns:1fr;gap:.4rem}.res-card{grid-template-columns:auto 1fr}.res-card .raction{grid-column:2;text-align:left}}
+
 /* ============================ REVEAL (editorial) ============================ */
 .rv{opacity:0;transform:translateY(26px);transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease)}
 .rv.in{opacity:1;transform:none}
