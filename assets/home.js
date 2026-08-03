@@ -22,6 +22,8 @@
   document.querySelectorAll('.has-menu').forEach(function (item) {
     var btn = item.querySelector('.nav-top');
     if (!btn) return;
+    /* single-link items (no dropdown panel) are real navigation links — leave them alone */
+    if (!item.querySelector('.dropdown')) return;
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var open = item.classList.contains('open');
